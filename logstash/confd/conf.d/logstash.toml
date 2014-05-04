@@ -1,0 +1,6 @@
+[template]
+keys        = [ "elasticsearch/host" ]
+owner       = "logstash"
+mode        = "0644"
+src         = "logstash.conf.tmpl"
+dest        = "/etc/logstash.conf"

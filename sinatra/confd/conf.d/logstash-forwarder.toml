@@ -1,0 +1,6 @@
+[template]
+keys        = [ "logstash/host" ]
+owner       = "logstash"
+mode        = "0644"
+src         = "logstash-forwarder.json.tmpl"
+dest        = "/etc/logstash-forwarder.json"

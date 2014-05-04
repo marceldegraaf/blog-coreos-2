@@ -1,0 +1,6 @@
+[template]
+keys        = [ "/logstash/ssl_certificate" ]
+owner       = "logstash"
+mode        = "0644"
+src         = "ssl_certificate.tmpl"
+dest        = "/opt/logstash/ssl/logstash-forwarder.crt"

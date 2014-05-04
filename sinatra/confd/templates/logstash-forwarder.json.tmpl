@@ -1,0 +1,18 @@
+{
+  "network": {
+    "servers": [ "{{ .logstash_host }}:10101" ],
+    "ssl certificate": "/opt/logstash/ssl/logstash-forwarder.crt",
+    "ssl key": "/opt/logstash/ssl/logstash-forwarder.key",
+    "ssl ca": "/opt/logstash/ssl/logstash-forwarder.crt",
+    "timeout": 15
+  },
+
+  "files": [
+    {
+      "paths": [
+        "/opt/app/sinatra.log"
+      ],
+      "fields": { "type": "syslog" }
+    }
+  ]
+}

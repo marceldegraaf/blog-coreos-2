@@ -1,0 +1,13 @@
+[Unit]
+Description=logstash
+
+[Service]
+EnvironmentFile=/etc/environment
+ExecStartPre=/usr/bin/docker pull marceldegraaf/logstash
+ExecStart=/usr/bin/docker run --rm --name logstash -e HOST_IP=${COREOS_PUBLIC_IPV4} -p 10101:10101 marceldegraaf/logstash
+ExecStartPost=/usr/bin/etcdctl set /logstash/host ${COREOS_PUBLIC_IPV4}
+ExecStop=/usr/bin/docker kill logstash
+ExecStopPost=/usr/bin/etcdctl rm --dir --recursive /logstash
+
+[X-Fleet]
+X-Conflicts=logstash.service

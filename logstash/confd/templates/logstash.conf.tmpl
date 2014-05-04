@@ -1,0 +1,15 @@
+input {
+  lumberjack {
+    port => 10101
+    ssl_certificate => "/opt/logstash/ssl/logstash-forwarder.crt"
+    ssl_key => "/opt/logstash/ssl/logstash-forwarder.key"
+  }
+}
+
+output {
+  elasticsearch {
+    protocol => "http"
+    host => "{{ .elasticsearch_host }}"
+    port => 9200
+  }
+}

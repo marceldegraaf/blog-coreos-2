@@ -1,0 +1,13 @@
+[Unit]
+Description=elasticsearch
+
+[Service]
+EnvironmentFile=/etc/environment
+ExecStartPre=/usr/bin/docker pull marceldegraaf/elasticsearch
+ExecStart=/usr/bin/docker run --rm --name elasticsearch -p 9200:9200 -e HOST_IP=${COREOS_PUBLIC_IPV4} marceldegraaf/elasticsearch
+ExecStartPost=/usr/bin/etcdctl set /elasticsearch/host ${COREOS_PUBLIC_IPV4}
+ExecStop=/usr/bin/docker kill elasticsearch
+ExecStopPost=/usr/bin/etcdctl rm /elasticsearch/host
+
+[X-Fleet]
+X-Conflicts=elasticsearch.service

@@ -1,0 +1,6 @@
+[template]
+keys        = [ "/logstash/ssl_private_key" ]
+owner       = "logstash"
+mode        = "0644"
+src         = "ssl_private_key.tmpl"
+dest        = "/opt/logstash/ssl/logstash-forwarder.key"
