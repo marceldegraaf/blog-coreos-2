@@ -1,5 +1,8 @@
-FROM stackbrew/ubuntu:saucy
+FROM stackbrew/ubuntu
 MAINTAINER Marcel de Graaf <mail@marceldegraaf.net>
+
+# Update
+RUN apt-get update
 
 # Install Java
 RUN apt-get install -y --force-yes openjdk-7-jre-headless wget
