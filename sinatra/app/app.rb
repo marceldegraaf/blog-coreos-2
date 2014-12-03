@@ -13,6 +13,6 @@ configure do
   use LogstashLogger, file
 end
 
-get '/' do
+get '/app' do
     'Hello world!'
 end

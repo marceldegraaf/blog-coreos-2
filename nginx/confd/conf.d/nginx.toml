@@ -1,5 +1,5 @@
 [template]
-keys        = [ "app/server" ]
+keys        = [ "app/server", "elasticsearch/host" ]
 owner       = "nginx"
 mode        = "0644"
 src         = "nginx.conf.tmpl"
