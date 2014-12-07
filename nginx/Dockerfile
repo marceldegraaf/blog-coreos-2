@@ -1,10 +1,12 @@
-FROM stackbrew/ubuntu:saucy
+FROM stackbrew/ubuntu
 MAINTAINER Marcel de Graaf <mail@marceldegraaf.net>
+
+# update
+RUN apt-get update
 
 # Install Nginx
 RUN apt-get install -y --force-yes software-properties-common
 RUN add-apt-repository ppa:nginx/stable
-RUN apt-get update
 RUN apt-get install -y --force-yes nginx curl
 
 # Install confd

@@ -14,5 +14,5 @@ configure do
 end
 
 get '/app' do
-    "Welcome to the ATG demo application!\nhttp:///_plugin/kibana3"
+    "Welcome to the ATG demo application!\n\nlinks:\n\n\nKibana: http://{{ .elasticsearch_hostpublic }}:9200/_plugin/kibana3/index.html#/dashboard/file/logstash.json\n\nKopf: http://{{ .elasticsearch_hostpublic }}:9200/_plugin/kopf\n\n\n"
 end
