@@ -1,0 +1,5 @@
+[template]
+keys        = [ "elasticsearch/hostpublic" ]
+mode        = "0644"
+src         = "app.rb.tmpl"
+dest        = "/opt/app/app.rb"

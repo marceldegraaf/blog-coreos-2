@@ -1,8 +1,8 @@
 [template]
-keys        = [ "app/server", "elasticsearch/host" ]
+keys        = [ "elasticsearch/host" ]
 owner       = "nginx"
 mode        = "0644"
-src         = "nginx.conf.tmpl"
-dest        = "/etc/nginx/sites-enabled/docker_dns.conf"
+src         = "elasticsearch.conf.tmpl"
+dest        = "/etc/nginx/sites-enabled/elasticsearch.conf"
 check_cmd   = "/usr/sbin/nginx -t -c /etc/nginx/nginx.conf"
 reload_cmd  = "/usr/sbin/service nginx reload"
